@@ -1,0 +1,107 @@
+/* ESTILOS HOME_PAGE ================= */
+
+.defaultTitle {
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    color: #222;
+}
+
+.defaultText {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #222;
+}
+
+.master {
+    display: flex;
+    width: 100svw;
+    height: 100svh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    flex-direction: column;
+    border: 1px solid #ddd;
+    display: flex;
+    width: 100svw;
+    height: 100svh;
+    max-width: 750px;
+    max-height: 100svh;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+.homeBar {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeBody {
+    display: flex;
+    width: 100%;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black */
+}
+
+.homeBaseboard {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.logoContainer {
+    display: flex;
+    width: 100%;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeSubtitle_1 {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeSubtitle_2 {
+    display: flex;
+    width: 100%;
+    padding-top: 100px;
+    flex: auto;
+    justify-content: center;
+}
+
+.homeLogo {
+    border-radius: 99px;
+    width: 150px;
+    height: 150px;
+}
+
+.homeChatButton {
+    display: flex;
+    width: 85%;
+    height: 55px;
+    background-color: #353535;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.homeChatButton:hover {
+    background-color: #000;
+}

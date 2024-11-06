@@ -14,12 +14,13 @@ const Message = ({ index, msg, mode, func, id }) => {
     }
 
     let text = {
-        color: mode === 'USER' ? '#000' : '#fff'
+        color: mode === 'USER' ? '#000' : '#fff',
+        letterSpacing: '0.3px'
     }
 
     return (
         <div key={index} className='message-container' style={message_container} >
-            <p>{mode}</p>
+            <p style={{ padding: '3px' }} >{mode === 'USER' ? 'Voce' : 'M.Capocci'}</p>
 
             <div className='text-container' style={text_container} >
                 {loading ? (

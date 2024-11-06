@@ -31,15 +31,27 @@
   top: 0px;
 }
 
+.container {
+  flex-direction: column;
+  display: flex;
+  height: 100svh;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
 .master {
   flex-direction: column;
   box-sizing: border-box;
   position: absolute;
   display: flex;
   height: 100svh;
-  width: 100svh;
   left: 0px;
   top: 0px;
+  max-width: 500px;
 }
 
 h1 {
@@ -242,8 +254,10 @@ input[type="text"] {
   position: relative;
   flex: auto;
   display: flex;
-  padding: 12.5px;
+  padding: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
   max-width: 70%;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
 }

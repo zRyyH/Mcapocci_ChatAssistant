@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import HomePage from './pages/home_page';
-import ChatPage from './pages/chat_page'
+import HomePage from './pages/homePage';
+import ChatPage from './pages/chatPage'
 
 const RoutesComponent = () => {
   return (
