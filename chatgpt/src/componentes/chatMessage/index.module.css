@@ -1,0 +1,16 @@
+.master {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+
+.messageContainer {
+    position: relative;
+    flex: auto;
+    display: flex;
+    padding: 10px;
+    max-width: 70%;
+    border: 1px solid #666;
+    border-radius: 15px;
+}

@@ -7,11 +7,20 @@ WORKDIR /app
 # Copia os arquivos para o container
 COPY . /app
 
-# Instala as dependências
+# Instala as dependências do Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expõe a porta 15000 para acesso externo
-EXPOSE 15000
+# Instala o Apache
+RUN apt-get update && apt-get install -y apache2 && rm -rf /var/lib/apt/lists/*
 
-# Comando para iniciar a API Flask
-CMD ["python", "app.py"]
+# Configura o Apache para rodar na porta 8080
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf && \
+    sed -i 's/:80/:8080/' /etc/apache2/sites-available/000-default.conf
+
+RUN mkdir /var/www/html/src
+
+# Expõe as portas para acesso externo
+EXPOSE 15000 8080
+
+# Comando para iniciar o Apache e o Flask juntos
+CMD service apache2 start && python app.py

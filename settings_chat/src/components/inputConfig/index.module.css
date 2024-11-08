@@ -1,0 +1,25 @@
+.master {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #999;
+    padding: 5px;
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+}
+
+.input {
+    border: none;
+    outline: none;
+    height: 20px;
+    background-color: #f6f6f6
+}
+
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 999;
+    color: #333;
+}

@@ -1,17 +1,19 @@
 import axios from 'axios';
 
-const fetchData = async (text, id) => {
+export async function fetchData(dados) {
     try {
-        console.log(text, id)
-        const response = await axios.post('http://awpsoft.com.br:15000/get_gpt', {
-            user_input: String(text),
-            user_id: String(id)
-        });
-
-        if (response.data) return response.data
+        const response = await axios.post('http://awpsoft.com.br:15000/get_gpt', dados);
+        return response.data
     } catch {
         return false
-    } return false
+    }
 };
 
-export default fetchData;
+export async function getConfig() {
+    try {
+        const response = await axios.get('http://awpsoft.com.br:15000/configs');
+        return response.data
+    } catch {
+        return false
+    }
+}

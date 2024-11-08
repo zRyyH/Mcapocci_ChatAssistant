@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../contexts/appContext'
 
 import styles from './index.module.css'
 
 function HomePage() {
     const navigate = useNavigate();
+    const { config } = useContext(AppContext);
 
     const handleSubmit = () => {
         navigate('/chat');
@@ -14,7 +16,7 @@ function HomePage() {
         <div className={styles.master} >
             <div className={styles.container} >
                 <div className={styles.homeBar} >
-                    <p className={styles.defaultTitle}>M.CAPPOCI</p>
+                    <p className={styles.defaultTitle}>{config.perfil_name}</p>
                 </div>
 
                 <div className={styles.homeBody} >

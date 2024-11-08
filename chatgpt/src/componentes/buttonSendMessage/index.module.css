@@ -1,0 +1,23 @@
+.chatSendButton {
+    height: 45px;
+    width: 70px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 99px;
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.5s;
+}
+
+.chatSendButton:hover {
+    background-color: #464843;
+}
+
+.buttonIcon {
+    width: 20px;
+    height: 20px;
+}
