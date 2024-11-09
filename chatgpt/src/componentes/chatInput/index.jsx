@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { ChatContext } from "../../contexts/chatContext";
+import { AppContext } from "../../contexts/appContext";
+
 
 function ChatInput() {
     const { eventChange, eventPressKey, userInput } = useContext(ChatContext);
+    const { config } = useContext(AppContext);
 
     return (
         <input
@@ -10,7 +13,7 @@ function ChatInput() {
             value={userInput}
             onChange={eventChange}
             onKeyDown={eventPressKey}
-            placeholder="Enviar mensagem..."
+            placeholder={config.chatInputPlaceholder}
         />
     )
 }
