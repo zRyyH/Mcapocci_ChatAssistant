@@ -1,5 +1,4 @@
 import openai
-import glob
 import json
 
 openai.api_key = "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"
@@ -23,7 +22,7 @@ class ChatGPT:
         
     def set_configs(self):
         json_file = json.loads(self.read('./configs/settings.json'))
-        gpt_config = json_file['gpt_config']
+        gpt_config = json_file['gptConfig']
         self.set_msg('system', gpt_config)
             
         

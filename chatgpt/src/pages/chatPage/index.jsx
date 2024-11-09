@@ -10,21 +10,25 @@ import ButtonSendMessage from '../../componentes/buttonSendMessage';
 
 
 function ChatPage() {
-    const { sessionId, config } = useContext(AppContext)
+    const { config } = useContext(AppContext)
     const { chat, endOfMessagesRef } = useContext(ChatContext)
+
+    console.log(config)
 
     return (
         <div className={styles.master} >
+            <img className={styles.background} src={`http://awpsoft.com.br:8080/src/${config.background}.png`} />
+
             <div className={styles.container}>
 
                 <div className={styles.chatBar}>
                     <div className={styles.chatLogo}>
-                        <img style={{ width: '60px', borderRadius: '99px' }} src="https://i.pinimg.com/originals/79/74/13/7974139d93849a61e8ba4b2d4321cd4d.jpg" />
+                        <img style={{ width: '60px', borderRadius: '99px' }} src={`http://awpsoft.com.br:8080/src/${config.perfil}.png`} />
                     </div>
 
                     <div className={styles.chatTitle}>
-                        <h1>{config.perfil_name}</h1>
-                        <p>{sessionId}</p>
+                        <h1>{config.name}</h1>
+                        <p>{config.chatSubtitle}</p>
                     </div>
                 </div>
 

@@ -10,6 +10,12 @@ Chats = {}
 app = Flask(__name__)
 CORS(app)
 
+def updateSettings(data):
+    json_file = json.loads(read('./configs/settings.json'))
+    json_file.update(data)
+    json_file = json.dumps(json_file, indent=4)
+    write(path='./configs/settings.json', data=json_file)
+
 @app.route('/get_gpt', methods=['POST'])
 def get_gpt():
     json_body = request.get_json()
@@ -33,7 +39,6 @@ def set_config():
         
         data = {
             "gptConfig": json_body['gptConfig'],
-            
             "name": json_body['name'],
             "email": json_body['email'],
             "whatsapp": json_body['whatsapp'],
@@ -44,32 +49,9 @@ def set_config():
             "chatInputPlaceholder": json_body['chatInputPlaceholder'],
         }
         
-            # "placeholderColor": json_body['placeholderColor'],
-            # "sendButtonColor": json_body['sendButtonColor'],
-            # "chatButtonColor": json_body['chatButtonColor'],
-            # "chatColor": json_body['chatColor'],
-            # "inputColor": json_body['inputColor'],
-            # "headerColor": json_body['headerColor'],
-            # "homeBackgroundColor": json_body['homeBackgroundColor'],
-            # "fontHomeColor": json_body['fontHomeColor'],
-            # "fontChatColor": json_body['fontChatColor'],
-            # "messageAssistentColor": json_body['messageAssistentColor'],
-            # "messageUserColor": json_body['messageUserColor'],
-            # "messageTextUserColor": json_body['messageTextUserColor'],
-            # "messageTextAssistentColor": json_body['messageTextAssistentColor'],
-            # "homeTextNameSize": json_body['homeTextNameSize'],
-            # "homeImgLogoSize": json_body['homeLogoSize'],
-            # "homeTextSubtitle1Size": json_body['homeSubtitle1Size'],
-            # "homeTextSubtitle2Size": json_body['homeSubtitle2Size'],
-            # "homeTextInstagram": json_body['homeTextInstagram'],
-            # "chatTextNameSize": json_body['chatTextNameSize'],
-            # "chatTextSubtitleSize": json_body['chatTextSubtitleSize'],
-            # "chatInputSize": json_body['chatInputSize']
-        
-        json_file = json.dumps(data, indent=4)
-        
-        if write(path='./configs/settings.json', data=json_file):
-            return jsonify({"message": "Configurações salvas!"}), 200
+        updateSettings(data)
+        return jsonify({"message": "Configurações salvas!"}), 200
+
     except:
         return jsonify({"error": "Configurações não salvas!"}), 400
     
@@ -83,12 +65,15 @@ def upload_img():
     isBackground = 'background' in request.files
     
     if isPerfil or isBackground:
-        save_img(request, 'background')
-        save_img(request, 'perfil')
+        perfilId = save_img(request, key='perfil')
+        backgroundId = save_img(request, key='background')
+        
+        updateSettings({'perfil': perfilId})
+        updateSettings({'background': backgroundId})
         
         return jsonify({"message": "Imagem salva!"}), 200
     else:
         return jsonify({"error": "Nenhuma imagem enviada!"}), 400
     
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=20000)
+    app.run(debug=True, host='0.0.0.0', port=2000)

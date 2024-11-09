@@ -20,7 +20,7 @@ RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf && \
 RUN mkdir /var/www/html/src
 
 # Expõe as portas para acesso externo
-EXPOSE 15000 8080
+EXPOSE 2000 8080
 
 # Comando para iniciar o Apache e o Flask juntos
 CMD service apache2 start && python app.py

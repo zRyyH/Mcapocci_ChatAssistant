@@ -14,22 +14,23 @@ function HomePage() {
 
     return (
         <div className={styles.master} >
+            <img className={styles.background} src={`http://awpsoft.com.br:8080/src/${config.background}.png`} />
             <div className={styles.container} >
                 <div className={styles.homeBar} >
-                    <p className={styles.defaultTitle}>{config.perfil_name}</p>
+                    <p className={styles.defaultTitle}>{config.name}</p>
                 </div>
 
                 <div className={styles.homeBody} >
                     <div className={styles.logoContainer} >
-                        <img className={styles.homeLogo} src="https://i.pinimg.com/originals/79/74/13/7974139d93849a61e8ba4b2d4321cd4d.jpg" />
+                        <img className={styles.homeLogo} src={`http://awpsoft.com.br:8080/src/${config.perfil}.png`} />
                     </div>
 
                     <div className={styles.homeSubtitle_1} >
-                        <p className={styles.defaultText}>Tire todas suas dúvias por aqui sobre meu trabalho.</p>
+                        <p className={styles.defaultText}>{config.homeSubtitle1}</p>
                     </div>
 
                     <div className={styles.homeSubtitle_2} >
-                        <p className={styles.defaultText}>Pergunte o que quiser.</p>
+                        <p className={styles.defaultText}>{config.homeSubtitle2}</p>
                     </div>
                 </div>
 
@@ -37,7 +38,7 @@ function HomePage() {
                     <button className={styles.homeChatButton} onClick={handleSubmit} >
                         <p className={styles.defaultText} style={{ color: 'white', fontWeight: 'bold' }} >Chat</p>
                     </button>
-                    <a className={styles.defaultText} href='https://www.instagram.com/mcapocci/' >Instagram @m.capocci</a>
+                    <a className={styles.defaultText} href={`https://www.instagram.com/${config.instagram}/`} >Instagram @{config.instagram}</a>
                 </div>
             </div>
         </div>

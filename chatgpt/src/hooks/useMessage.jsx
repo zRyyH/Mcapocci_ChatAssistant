@@ -15,7 +15,7 @@ const useFetchData = (index) => {
     const mode = message.mode
     const msg = message.msg
 
-    const author = mode === 'USER' ? 'Você' : config.perfil_name
+    const author = mode === 'USER' ? 'Você' : config.name
 
     useEffect(() => {
         (async () => {
