@@ -50,21 +50,25 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 12.5px;
+    /* border: 1px solid black; */
 }
 
 .chatLogo {
     display: flex;
-    height: 80px;
+    height: 70px;
     width: 80px;
     align-items: center;
     justify-content: center;
+    /* border: 1px solid black; */
 }
 
 .logo {
-    border-radius: 99px;
-    width: 70px;
-    height: 70px;
+    position: absolute;
+    border-radius: 999px;
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
 }
 
 .chatTitle {

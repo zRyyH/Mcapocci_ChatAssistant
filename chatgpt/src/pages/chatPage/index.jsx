@@ -18,12 +18,12 @@ function ChatPage() {
     return (
         <div className={styles.master} >
             <img className={styles.background} src={`http://awpsoft.com.br:8080/src/${config.background}.png`} />
-
+            
             <div className={styles.container}>
 
                 <div className={styles.chatBar}>
                     <div className={styles.chatLogo}>
-                        <img style={{ width: '60px', borderRadius: '99px' }} src={`http://awpsoft.com.br:8080/src/${config.perfil}.png`} />
+                        <img className={styles.logo} src={`http://awpsoft.com.br:8080/src/${config.perfil}.png`} />
                     </div>
 
                     <div className={styles.chatTitle}>

@@ -14,3 +14,27 @@
     border: 1px solid #666;
     border-radius: 15px;
 }
+
+.markdownBot h1,
+.markdownBot h2,
+.markdownBot h3,
+.markdownBot h4,
+.markdownBot h5,
+.markdownBot h6,
+.markdownBot a,
+.markdownBot p,
+.markdownBot strong,
+.markdownBot li {
+    color: #fff;
+    padding: 0px;
+    padding-bottom: 10px;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.markdownUser p {
+    color: #000;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+}

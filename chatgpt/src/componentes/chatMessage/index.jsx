@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './index.module.css'
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 import ReactLoading from 'react-loading';
 import useMessage from '../../hooks/useMessage'
 import useMessageStyles from '../../hooks/styles/useMessageStyles';
@@ -16,7 +19,7 @@ const Message = ({ index }) => {
                 {loading ? (
                     <ReactLoading type="spin" color="#fff" height={20} width={20} />
                 ) : (
-                    <p style={dynamicStyles.text} >{data}</p>
+                    <ReactMarkdown className={mode === 'USER' ? styles.markdownUser : styles.markdownBot} remarkPlugins={[remarkGfm]} >{data}</ReactMarkdown>
                 )}
             </div>
         </div>
