@@ -21,11 +21,15 @@ export default function useSendMessage() {
     }
 
     function sendMessage() {
-        setUserInput('')
-        let temp_msg = chat;
-        temp_msg.push({ msg: userInput, mode: 'USER' })
-        temp_msg.push({ msg: userInput, mode: 'ASSISTENT' })
-        setChat(temp_msg)
+        if (userInput) {
+            let temp_msg = chat;
+            temp_msg.push({ msg: userInput, mode: 'USER' })
+            temp_msg.push({ msg: userInput, mode: 'ASSISTENT' })
+            setChat(temp_msg)
+            setUserInput('')
+        } else {
+            alert('Faça uma pergunta!')
+        }
     };
 
     useEffect(() => {
