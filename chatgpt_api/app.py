@@ -74,6 +74,6 @@ def upload_img():
         return jsonify({"message": "Imagem salva!"}), 200
     else:
         return jsonify({"error": "Nenhuma imagem enviada!"}), 400
-    
+        
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=2000)
+    app.run(port=2000)
