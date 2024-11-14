@@ -9,7 +9,7 @@ import ChatInput from '../../componentes/chatInput';
 import ButtonSendMessage from '../../componentes/buttonSendMessage';
 
 
-const apache = 'https://apache.mcapocci.com.br/src/'
+const apache = 'https://apache.mcapocci.com/src/'
 
 
 function ChatPage() {

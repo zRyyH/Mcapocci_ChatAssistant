@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = 'https://api.mcapocci.com.br/'
+const api = 'https://api.mcapocci.com/'
 
 export async function fetchData(dados) {
     try {
