@@ -4,7 +4,7 @@ import { AppContext } from '../../contexts/appContext'
 import styles from './index.module.css'
 
 
-const apache = 'https://apache.mcapocci.com/src/'
+const apache = 'https://apache.mcapocci.com/src'
 
 
 function HomePage() {
@@ -17,7 +17,7 @@ function HomePage() {
 
     return (
         <div className={styles.master} >
-            <img className={styles.background} src={`${apache}${config.background}.png`} />
+            <img className={styles.background} src={`${apache}/${config.background}.png`} />
             <div className={styles.container} >
                 <div className={styles.homeBar} >
                     <p className={styles.defaultTitle}>{config.name}</p>
@@ -25,7 +25,7 @@ function HomePage() {
 
                 <div className={styles.homeBody} >
                     <div className={styles.logoContainer} >
-                        <img className={styles.homeLogo} src={`${apache}${config.perfil}.png`} />
+                        <img className={styles.homeLogo} src={`${apache}/${config.perfil}.png`} />
                     </div>
 
                     <div className={styles.homeSubtitle_1} >
