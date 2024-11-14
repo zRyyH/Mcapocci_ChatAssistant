@@ -9,21 +9,22 @@ import ChatInput from '../../componentes/chatInput';
 import ButtonSendMessage from '../../componentes/buttonSendMessage';
 
 
+const apache = 'https://apache.mcapocci.com.br/src/'
+
+
 function ChatPage() {
     const { config } = useContext(AppContext)
     const { chat, endOfMessagesRef } = useContext(ChatContext)
 
-    console.log(config)
-
     return (
         <div className={styles.master} >
-            <img className={styles.background} src={`http://awpsoft.com.br:8080/src/${config.background}.png`} />
+            <img className={styles.background} src={`${apache}${config.background}.png`} />
             
             <div className={styles.container}>
 
                 <div className={styles.chatBar}>
                     <div className={styles.chatLogo}>
-                        <img className={styles.logo} src={`http://awpsoft.com.br:8080/src/${config.perfil}.png`} />
+                        <img className={styles.logo} src={`${apache}${config.perfil}.png`} />
                     </div>
 
                     <div className={styles.chatTitle}>

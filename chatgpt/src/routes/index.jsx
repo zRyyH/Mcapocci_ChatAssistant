@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import HomePage from '../pages/homePage';
 import ChatProvider from '../providers/chatProvider';
 
-
 const RoutesComponent = () => {
   return (
     <Router>
