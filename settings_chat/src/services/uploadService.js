@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function setConfigs(dados) {
     try {
-        const resposta = await axios.post('http://awpsoft.com.br:2000/set_configs', dados);
+        const resposta = await axios.post('https://api.mcapocci.com.br/set_configs', dados);
         if (resposta.status === 200) {
             console.log('Resposta da requisição:', resposta.data);
             return true
@@ -17,7 +17,7 @@ export async function setConfigs(dados) {
 
 export async function getConfigs() {
     try {
-        const resposta = await axios.get('http://awpsoft.com.br:2000/configs');
+        const resposta = await axios.get('https://api.mcapocci.com.br/configs');
         if (resposta.status === 200) {
             console.log('Resposta da requisição:', resposta.data);
             return resposta.data
@@ -32,7 +32,7 @@ export async function getConfigs() {
 
 export async function uploadImage(formData) {
     try {
-        const response = await axios.post('http://awpsoft.com.br:2000/upload_img', formData, {
+        const response = await axios.post('https://api.mcapocci.com.br/upload_img', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

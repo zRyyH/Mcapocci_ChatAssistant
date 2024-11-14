@@ -76,4 +76,4 @@ def upload_img():
         return jsonify({"error": "Nenhuma imagem enviada!"}), 400
         
 if __name__ == '__main__':
-    app.run(port=2000, ssl_context=('cert.pem', 'key.pem'))
+    app.run(port=2000)

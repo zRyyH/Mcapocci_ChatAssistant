@@ -1,7 +1,7 @@
 import openai
 import json
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 class ChatGPT:
     def __init__(self):
