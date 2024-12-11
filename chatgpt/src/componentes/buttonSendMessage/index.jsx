@@ -8,7 +8,7 @@ function ButtonSendMessage() {
 
     return (
         <button className={styles.chatSendButton} onClick={sendMessage} >
-            <img className={styles.buttonIcon} src={buttonIcon} />
+            <img className={styles.buttonIcon} src={buttonIcon} alt='icon' />
         </button>
     )
 }

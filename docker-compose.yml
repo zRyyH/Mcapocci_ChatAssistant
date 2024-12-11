@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  api:
+    container_name: apiAssistant
+    build:
+      context: ./chatgpt_api  
+    ports:
+      - "15000:2000"
+      - "8080:8080"
+    restart: always
+
+  chat:
+    container_name: chatgpt
+    build:
+      context: ./chatgpt
+      args:
+        REACT_APP_API_URL: http://localhost:15000
+        REACT_APP_APACHE_URL: http://localhost:8080/src
+    ports:
+      - "80:80"
+    restart: always
+
+  settings:
+    container_name: settings
+    build:
+      context: ./settings_chat
+      args:
+        REACT_APP_API_URL: http://localhost:15000
+    ports:
+      - "777:80"
+    restart: always

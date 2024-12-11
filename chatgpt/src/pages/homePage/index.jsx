@@ -4,10 +4,10 @@ import { AppContext } from '../../contexts/appContext'
 import styles from './index.module.css'
 
 
-const apache = 'https://apache.mcapocci.com/src'
-
 
 function HomePage() {
+    const apacheUrl = process.env.REACT_APP_APACHE_URL;
+
     const navigate = useNavigate();
     const { config } = useContext(AppContext);
 
@@ -17,7 +17,7 @@ function HomePage() {
 
     return (
         <div className={styles.master} >
-            <img className={styles.background} src={`${apache}/${config.background}.png`} />
+            <img className={styles.background} src={`${apacheUrl}/${config.background}.png`} alt='logo' />
             <div className={styles.container} >
                 <div className={styles.homeBar} >
                     <p className={styles.defaultTitle}>{config.name}</p>
@@ -25,7 +25,7 @@ function HomePage() {
 
                 <div className={styles.homeBody} >
                     <div className={styles.logoContainer} >
-                        <img className={styles.homeLogo} src={`${apache}/${config.perfil}.png`} />
+                        <img className={styles.homeLogo} src={`${apacheUrl}/${config.perfil}.png`} alt='logo' />
                     </div>
 
                     <div className={styles.homeSubtitle_1} >

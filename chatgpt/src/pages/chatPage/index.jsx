@@ -1,30 +1,28 @@
 import React, { useContext } from 'react';
 import styles from './index.module.css'
-
 import { ChatContext } from '../../contexts/chatContext';
 import { AppContext } from '../../contexts/appContext';
-
 import Message from '../../componentes/chatMessage';
 import ChatInput from '../../componentes/chatInput';
 import ButtonSendMessage from '../../componentes/buttonSendMessage';
 
 
-const apache = 'https://apache.mcapocci.com/src'
-
 
 function ChatPage() {
+    const apacheUrl = process.env.REACT_APP_APACHE_URL;
+    
     const { config } = useContext(AppContext)
     const { chat, endOfMessagesRef } = useContext(ChatContext)
 
     return (
         <div className={styles.master} >
-            <img className={styles.background} src={`${apache}/${config.background}.png`} />
+            <img className={styles.background} src={`${apacheUrl}/${config.background}.png`} alt='logo' />
             
             <div className={styles.container}>
 
                 <div className={styles.chatBar}>
                     <div className={styles.chatLogo}>
-                        <img className={styles.logo} src={`${apache}/${config.perfil}.png`} />
+                        <img className={styles.logo} src={`${apacheUrl}/${config.perfil}.png`} alt='logo' />
                     </div>
 
                     <div className={styles.chatTitle}>

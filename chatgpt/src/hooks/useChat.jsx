@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 
 export default function useSendMessage() {
     const [userInput, setUserInput] = useState('');
@@ -31,10 +31,6 @@ export default function useSendMessage() {
             alert('Faça uma pergunta!')
         }
     };
-
-    useEffect(() => {
-
-    }, []);
 
     return { userInput, chat, endOfMessagesRef, setUserInput, setChat, eventChange, eventPressKey, sendMessage, autoScroll }
 }

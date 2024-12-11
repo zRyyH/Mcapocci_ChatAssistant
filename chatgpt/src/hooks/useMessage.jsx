@@ -4,6 +4,8 @@ import { ChatContext } from '../contexts/chatContext';
 import { AppContext } from '../contexts/appContext';
 
 const useFetchData = (index) => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const { chat, autoScroll } = useContext(ChatContext);
     const { sessionId, config } = useContext(AppContext);
 
@@ -25,7 +27,7 @@ const useFetchData = (index) => {
             }
 
             if (mode === 'ASSISTENT') {
-                setData(await fetchData(data))
+                setData(await fetchData(apiUrl, data))
             } else {
                 setData(msg)
             }
@@ -34,7 +36,7 @@ const useFetchData = (index) => {
             autoScroll()
         })()
 
-    }, [mode, msg, sessionId]);
+    }, [mode, msg, sessionId, apiUrl, autoScroll]);
 
     return { data, loading, author, mode };
 };

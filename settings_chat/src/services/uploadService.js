@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const api = 'https://api.mcapocci.com'
-
-export async function setConfigs(dados) {
+export async function setConfigs(url, dados) {
     try {
-        const resposta = await axios.post(`${api}/set_configs`, dados);
+        const resposta = await axios.post(`${url}/set_configs`, dados);
         if (resposta.status === 200) {
             console.log('Resposta da requisição:', resposta.data);
             return true
@@ -17,9 +15,9 @@ export async function setConfigs(dados) {
     return false;
 };
 
-export async function getConfigs() {
+export async function getConfigs(url) {
     try {
-        const resposta = await axios.get(`${api}/configs`);
+        const resposta = await axios.get(`${url}/configs`);
         if (resposta.status === 200) {
             console.log('Resposta da requisição:', resposta.data);
             return resposta.data
@@ -32,9 +30,9 @@ export async function getConfigs() {
     return false;
 };
 
-export async function uploadImage(formData) {
+export async function uploadImage(url, formData) {
     try {
-        const response = await axios.post(`${api}/upload_img`, formData, {
+        const response = await axios.post(`${url}/upload_img`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

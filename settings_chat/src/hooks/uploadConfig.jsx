@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { getConfigs, setConfigs, uploadImage } from "../services/uploadService";
 
 export default function useUploadConfigs() {
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const [image, setImage] = useState({
         "perfil": null,
         "background": null
@@ -41,17 +43,17 @@ export default function useUploadConfigs() {
         formData.append('perfil', image.perfil);
         formData.append('background', image.background);
 
-        if (await uploadImage(formData)) {
+        if (await uploadImage(apiUrl, formData)) {
             alert("Imagems salvas!")
         }
 
-        if (await setConfigs(data)) {
+        if (await setConfigs(apiUrl, data)) {
             alert("Configurações salvas!")
         }
     };
 
     async function downloadConfig() {
-        const response = await getConfigs();
+        const response = await getConfigs(apiUrl);
         if (response) {
             setData(response);
         }

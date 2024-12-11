@@ -1,19 +1,17 @@
 import axios from 'axios';
 
-const api = 'https://api.mcapocci.com'
-
-export async function fetchData(dados) {
+export async function fetchData(path, dados) {
     try {
-        const response = await axios.post(`${api}/get_gpt`, dados);
+        const response = await axios.post(`${path}/get_gpt`, dados);
         return response.data
     } catch {
         return false
     }
 };
 
-export async function getConfig() {
+export async function getConfig(path) {
     try {
-        const response = await axios.get(`${api}/configs`);
+        const response = await axios.get(`${path}/configs`);
         return response.data
     } catch {
         return false

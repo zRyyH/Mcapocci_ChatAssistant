@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import Loading from 'react-loading';
+
 
 const useMessageStyles = (mode) => {
     return useMemo(() => {
@@ -21,5 +21,6 @@ const useMessageStyles = (mode) => {
         return styles;
     }, [mode]);
 };
+
 
 export default useMessageStyles;
